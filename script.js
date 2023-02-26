@@ -117,21 +117,21 @@ document.querySelector('.again').addEventListener('click', function () {
   styleNumber('15rem');
 });
 
-function validateNumber(event) {
-  const keyCode = event.keyCode;
+// function validateNumber(event) {
+//   const keyCode = event.keyCode;
 
-  const excludedKeys = [8, 37, 39, 46];
+//   const excludedKeys = [8, 37, 39, 46];
 
-  if (
-    !(
-      (keyCode >= 48 && keyCode <= 57) ||
-      (keyCode >= 96 && keyCode <= 105) ||
-      excludedKeys.includes(keyCode)
-    )
-  ) {
-    event.preventDefault();
-  }
-}
+//   if (
+//     !(
+//       (keyCode >= 48 && keyCode <= 57) ||
+//       (keyCode >= 96 && keyCode <= 105) ||
+//       excludedKeys.includes(keyCode)
+//     )
+//   ) {
+//     event.preventDefault();
+//   }
+// }
 
 function isKeypressCharValid(e, chars) {
   e = e || window.event;
