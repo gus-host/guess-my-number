@@ -116,3 +116,40 @@ document.querySelector('.again').addEventListener('click', function () {
 
   styleNumber('15rem');
 });
+
+function validateNumber(event) {
+  const keyCode = event.keyCode;
+
+  const excludedKeys = [8, 37, 39, 46];
+
+  if (
+    !(
+      (keyCode >= 48 && keyCode <= 57) ||
+      (keyCode >= 96 && keyCode <= 105) ||
+      excludedKeys.includes(keyCode)
+    )
+  ) {
+    event.preventDefault();
+  }
+}
+
+function isKeypressCharValid(e, chars) {
+  e = e || window.event;
+
+  // Allow delete, escape, tab and enter
+  if (/^(8|9|13|27)$/.test('' + e.keyCode)) {
+    return true;
+  }
+
+  var charCode = typeof e.which == 'number' ? e.which : e.keyCode;
+  var charTyped = String.fromCharCode(charCode);
+  return chars.indexOf(charTyped) > -1;
+}
+
+var textBox = document.querySelector('.guess');
+
+textBox.onkeypress = function (evt) {
+  if (!isKeypressCharValid(evt, '123467890')) {
+    return false;
+  }
+};
