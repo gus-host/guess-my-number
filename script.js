@@ -149,7 +149,7 @@ function isKeypressCharValid(e, chars) {
 var textBox = document.querySelector('.guess');
 
 textBox.onkeypress = function (evt) {
-  if (!isKeypressCharValid(evt, '123467890')) {
+  if (!isKeypressCharValid(evt, '1234567890')) {
     return false;
   }
 };
